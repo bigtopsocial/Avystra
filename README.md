@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Nisshant Menddhe Trading Institute Clone
 
-## Getting Started
+> A pixel-perfect, zero-shot frontend clone generated at warp speed using **Antigravity**.
 
-First, run the development server:
+![Project Showcase](./public/images/ref.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 💡 The Story
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+I wanted to test the limits of what AI can do in creating complex, production-ready interfaces. Here's how this UI was brought to life:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **The Design**: The original UI was architected and generated using **Banani AI**, delivering a sleek, modern, and high-converting landing page structure.
+2. **The Execution**: I took a long, continuous screenshot (`ref.png`) of that Banani AI design and fed it to **Antigravity**. 
+3. **The Result**: Antigravity **video-coded** the entire frontend in a **single shot**. No back-and-forth debugging, no massive manual CSS tweaks—just a direct translation from pixels to production-ready React components.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Tech Stack
 
-## Learn More
+This project was built without compromises on performance or aesthetics:
 
-To learn more about Next.js, take a look at the following resources:
+- **Framework**: Next.js 15 (App Router)
+- **Styling**: Tailwind CSS v4
+- **Animations**: Framer Motion (Scroll triggers, SVG timelines, staggered reveals)
+- **Language**: TypeScript
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ✨ Key Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Pixel-Perfect Replication**: The margins, typography, padding, colors, and layouts match the source image flawlessly.
+- **Fully Responsive**: Mobile, tablet, and desktop layouts work out of the box using Tailwind's responsive utilities.
+- **Scroll-Linked SVG Timelines**: The `/about` page features an interactive SVG line that draws itself as the user scrolls down through the timeline events.
+- **Dynamic Routing**: Includes parameterized `[courseId]` routes for specific course detail pages.
+- **WhatsApp Integration**: The enrollment form automatically generates a pre-filled, URL-encoded WhatsApp message bridging the site to the support team directly.
 
-## Deploy on Vercel
+## 🚀 Getting Started
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+If you want to spin this up locally and see the animations in action:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/banani-antigravity-clone.git
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+4. Open [http://localhost:3000](http://localhost:3000)
+
+## 📸 Behind the Scenes
+
+This repository proves that the AI-assisted developer workflow has fundamentally changed. What used to take days of slicing designs, writing boilerplate, and matching precise hex codes was accomplished effortlessly by combining two powerful AI tools: **Banani AI** (for the creative layout) + **Antigravity** (for the flawless implementation).
+
+---
+
+*Built with passion, AI, and a single screenshot.*

@@ -1,0 +1,80 @@
+export const coursesData = [
+    {
+        id: "4-in-1-technical-analysis",
+        title: "4 in 1 Technical Analysis Course",
+        level: "Trading Masterclass",
+        levelColor: "bg-[#0f172a] text-white",
+        description: "A complete 8-week intensive program covering everything from low-risk, high-reward trading strategies to advanced technical chart patterns and Fibonacci trading techniques.",
+        price: "₹30,000",
+        duration: "8 Weeks",
+        modules: "40 Modules",
+        support: "6 Months Mentorship",
+        image: "/images/2.png",
+        fullDescription: `If you're serious about mastering stock trading and improving your financial skills, Nishant Mendhe's 4-in-1 Course at the Stock Market Training Institute in Nagpur is the perfect solution for you. This expertly designed course covers everything from low-risk, high-reward trading strategies and technical analysis with RSI to advanced technical chart patterns and Fibonacci trading techniques. By enrolling in this program, you'll acquire the knowledge and skills necessary to make informed investment decisions and propel your investment journey towards success. This share market course is available online only and includes daily webinars from Monday to Friday, 8 PM to 9 PM. The course lasts eight weeks, and you'll get six months of free mentorship and daily nifty and bank nifty chart analysis in a live webinar.`
+    },
+    {
+        id: "beginners-guide",
+        title: "Beginner's Guide",
+        level: "Beginner",
+        levelColor: "bg-[#f1f5f9] text-[#475569]",
+        description: "Covering essential topics such as market analysis, risk management, and trading psychology, providing a comprehensive understanding of basics.",
+        price: "₹10,000",
+        duration: "4 Weeks",
+        modules: "12 Modules",
+        support: "Community Access",
+        image: "/images/2(1).png",
+        fullDescription: "Covering essential topics such as market analysis, risk management, and trading psychology, this course provides a comprehensive understanding of the basics needed to begin your trading journey safely."
+    },
+    {
+        id: "advanced-trading-strategies",
+        title: "Advanced Trading Strategies",
+        level: "Advanced",
+        levelColor: "bg-[#0f172a] text-white",
+        description: "Explore advanced charting techniques and learn how to implement effective trading strategies for a competitive edge.",
+        price: "₹15,000",
+        duration: "6 Weeks",
+        modules: "18 Modules",
+        support: "Lifetime Recordings",
+        image: "/images/2.png",
+        fullDescription: "Explore advanced charting techniques, and learn how to develop and implement effective trading strategies that can give you a competitive edge in the market. Ideal for participants with basic prior knowledge."
+    },
+    {
+        id: "technical-analysis-fundamentals",
+        title: "Technical Analysis Fundamentals",
+        level: "Intermediate",
+        levelColor: "bg-[#f1f5f9] text-[#475569]",
+        description: "Including chart patterns, indicators, and trend analysis, enabling you to make informed decisions based on price action.",
+        price: "₹12,000",
+        duration: "5 Weeks",
+        modules: "15 Modules",
+        support: "Live Q&A",
+        image: "/images/2(1).png",
+        fullDescription: "Including chart patterns, indicators, and trend analysis, enabling you to make informed trading decisions based on price action and market dynamics."
+    },
+    {
+        id: "risk-management-strategies",
+        title: "Risk Management Strategies",
+        level: "All Levels",
+        levelColor: "bg-[#f1f5f9] text-[#475569]",
+        description: "Safeguard your trading capital and minimize potential losses, ensuring long-term success.",
+        price: "₹8,000",
+        duration: "3 Weeks",
+        modules: "8 Modules",
+        support: "Webinar Access",
+        image: "/images/2.png",
+        fullDescription: "By mastering risk management strategies, you can safeguard your trading capital and minimize potential losses, ensuring long-term success in the stock market."
+    },
+    {
+        id: "options-trading-mastery",
+        title: "Options Trading Mastery",
+        level: "Advanced",
+        levelColor: "bg-[#0f172a] text-white",
+        description: "From understanding the intricacies of options contracts to implementing advanced directional strategies.",
+        price: "₹25,000",
+        duration: "6 Weeks",
+        modules: "24 Modules",
+        support: "Live Trading Room",
+        image: "/images/2(1).png",
+        fullDescription: "Unlock the potential of options trading with our comprehensive course on mastering this specialized area of the stock market. From understanding the intricacies of options contracts to implementing advanced options strategies."
+    }
+];
