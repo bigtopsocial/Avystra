@@ -14,15 +14,14 @@ export default function Navbar() {
 
       {/* Center */}
       <div className="hidden lg:flex items-center justify-center w-2/4 gap-10 whitespace-nowrap">
-        <Link href="/about" className="flex-shrink-0 text-[14px] font-medium text-gray-400 hover:text-gray-900 transition-colors">About Us</Link>
-        <Link href="#" className="flex-shrink-0 text-[14px] font-medium text-gray-400 hover:text-gray-900 transition-colors">Courses</Link>
-        <Link href="#" className="flex-shrink-0 text-[14px] font-medium text-gray-400 hover:text-gray-900 transition-colors">Free Resources</Link>
-        <Link href="#" className="flex-shrink-0 text-[14px] font-medium text-gray-400 hover:text-gray-900 transition-colors">FAQ</Link>
+        <Link href="/#about" className="flex-shrink-0 text-[14px] font-medium text-gray-400 hover:text-gray-900 transition-colors">About Us</Link>
+        <Link href="/#courses" className="flex-shrink-0 text-[14px] font-medium text-gray-400 hover:text-gray-900 transition-colors">Courses</Link>
+        <Link href="/#benefits" className="flex-shrink-0 text-[14px] font-medium text-gray-400 hover:text-gray-900 transition-colors">Benefits</Link>
+        <Link href="/#faq" className="flex-shrink-0 text-[14px] font-medium text-gray-400 hover:text-gray-900 transition-colors">FAQ</Link>
       </div>
 
       {/* Right */}
       <div className="hidden md:flex items-center justify-end w-1/4 gap-6 whitespace-nowrap">
-        <Link href="#" className="text-[14px] font-medium text-gray-400 hover:text-gray-900 transition-colors">Log In</Link>
         <Link href="#" className="px-6 py-3 bg-[#0F172A] text-white text-[14px] font-medium rounded-full hover:bg-gray-800 transition-colors">Join Now</Link>
       </div>
     </nav>

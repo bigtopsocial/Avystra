@@ -34,7 +34,7 @@ export default function FAQ() {
     };
 
     return (
-        <section className="w-full bg-white py-24 md:py-32">
+        <section id="faq" className="w-full bg-white py-24 md:py-32">
             <div className="max-w-[800px] mx-auto px-6 md:px-12">
 
                 {/* Header */}

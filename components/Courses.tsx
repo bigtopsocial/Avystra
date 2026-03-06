@@ -7,7 +7,7 @@ import { coursesData } from '@/lib/data';
 
 export default function Courses() {
     return (
-        <section className="w-full bg-white py-24 md:py-32">
+        <section id="courses" className="w-full bg-white py-24 md:py-32">
             <div className="max-w-[1280px] mx-auto px-6 md:px-12">
 
                 {/* Header */}

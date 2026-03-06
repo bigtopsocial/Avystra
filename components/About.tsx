@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function About() {
     return (
-        <section className="w-full bg-[#f6f7f9] py-24 md:py-32 overflow-hidden">
+        <section id="about" className="w-full bg-[#f6f7f9] py-24 md:py-32 overflow-hidden">
             <div className="max-w-[1280px] mx-auto px-6 md:px-12">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
@@ -18,7 +18,7 @@ export default function About() {
                             transition={{ duration: 0.7, ease: "easeOut" }}
                             className="text-[36px] md:text-[44px] font-bold text-[#0F172A] leading-tight mb-6"
                         >
-                            Join the <span className="text-blue-600 block">Best Stock Trading Institute in Nagpur</span>
+                            Meet Your <span className="text-slate-800 block">Mentor <br /> Nishant Mendhe</span>
                         </motion.h2>
 
                         <motion.div
@@ -42,7 +42,7 @@ export default function About() {
                             whileInView={{ opacity: 1, scaleX: 1 }}
                             viewport={{ once: true, margin: "-100px" }}
                             transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
-                            className="my-10 border-t border-gray-200 origin-left"
+                            className="my-3 border-t border-gray-200 origin-left"
                         />
 
                         {/* Stats */}
@@ -80,7 +80,7 @@ export default function About() {
                         className="relative w-full aspect-[4/5] rounded-[24px] overflow-hidden drop-shadow-2xl"
                     >
                         <Image
-                            src="/images/1(1).png"
+                            src="/images/about1.png"
                             alt="Stock Market Training Institute in Nagpur"
                             fill
                             className="object-cover object-bottom"

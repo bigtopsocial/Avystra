@@ -42,7 +42,7 @@ const benefits = [
 
 export default function Benefits() {
     return (
-        <section className="w-full bg-[#f6f7f9] py-24 md:py-32">
+        <section id="benefits" className="w-full bg-[#f6f7f9] py-24 md:py-32">
             <div className="max-w-[1280px] mx-auto px-6 md:px-12">
 
                 {/* Header */}
@@ -54,7 +54,7 @@ export default function Benefits() {
                         transition={{ duration: 0.7, ease: "easeOut" }}
                         className="text-[36px] md:text-[44px] font-bold text-[#0F172A] leading-tight mb-6"
                     >
-                        Benefits <span className="text-blue-600 block">We Offer</span>
+                        Benefits <span className="text-slate-800 block">We Offer</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -79,7 +79,7 @@ export default function Benefits() {
                             className="bg-white rounded-[24px] p-8 md:p-10 flex flex-col gap-6 items-start shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] transition-shadow duration-300"
                         >
                             {/* Icon Placeholder */}
-                            <div className="w-16 h-16 rounded-2xl bg-blue-50 text-blue-600 flex-shrink-0 flex items-center justify-center font-bold text-xl">
+                            <div className="w-16 h-16 rounded-2xl bg-slate-100 text-slate-800 flex-shrink-0 flex items-center justify-center font-bold text-xl">
                                 {index + 1}
                             </div>
 
