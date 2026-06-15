@@ -116,7 +116,7 @@ export default function Hero() {
                         <motion.div
                             {...fade}
                             transition={{ duration: 0.7, ease: 'easeOut', delay: 0.24 }}
-                            className="mt-8 flex items-center gap-4 border-l-2 border-accent-soft pl-4"
+                            className="mt-8 hidden items-center gap-4 border-l-2 border-accent-soft pl-4 sm:flex"
                         >
                             <AvatarStack />
                             <p className="max-w-xs text-sm leading-snug text-muted">
@@ -131,7 +131,7 @@ export default function Hero() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.9, ease: 'easeOut', delay: 0.15 }}
-                        className="relative mx-auto w-full max-w-[520px] lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:max-w-none"
+                        className="relative mx-auto mt-10 w-full max-w-[520px] sm:mt-12 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-0 lg:max-w-none"
                     >
                         {/* elegant arch background */}
                         <div className="absolute inset-x-8 bottom-0 top-12 -z-10 rounded-t-full border border-white/60 bg-gradient-to-b from-accent-soft/80 to-surface/30 shadow-[0_8px_32px_rgba(0,0,0,0.04)] [mask-image:linear-gradient(to_bottom,black_80%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_80%,transparent_100%)]" />
