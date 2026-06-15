@@ -1,26 +1,155 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ==========================================================================
+   Avystra Design System
+   Airbnb-inspired: white canvas, neutral high-contrast ink, one accent used
+   sparingly, soft rounded shapes, a single hover-elevation tier, generous
+   whitespace. Light theme only.
+   ========================================================================== */
+
+@theme {
+  /* ---- Surfaces ---- */
+  --color-canvas: #ffffff;       /* page floor */
+  --color-surface: #f7f7f7;      /* alternating section band */
+  --color-surface-2: #f0f1f2;    /* chips, subtle fills */
+
+  /* ---- Text ---- */
+  --color-ink: #1a1a1a;          /* headlines & primary text (near-black) */
+  --color-ink-soft: #333333;     /* hover for dark surfaces */
+  --color-body: #4a4a4a;         /* running body copy */
+  --color-muted: #6b6b6b;        /* secondary / supporting */
+  --color-muted-soft: #909090;   /* disabled / faint */
+
+  /* ---- Lines ---- */
+  --color-line: #e6e6e6;         /* default hairline */
+  --color-line-soft: #f0f0f0;    /* faint divider / chip bg */
+  --color-border-strong: #c9c9c9;
+
+  /* ---- Accent (used sparingly — echoes the Avystra gold mark) ---- */
+  --color-accent: #b4862f;
+  --color-accent-strong: #9a7222;
+  --color-accent-soft: #f6efe0;
+
+  /* ---- Brand (functional) ---- */
+  --color-brand-whatsapp: #25d366;
+  --color-brand-whatsapp-dark: #1da851;
+
+  /* ---- Typography ---- */
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  /* ---- Elevation (single hover tier, à la Airbnb) ---- */
+  --shadow-soft: 0 1px 3px rgb(0 0 0 / 0.05), 0 8px 24px rgb(0 0 0 / 0.05);
+  --shadow-float: 0 0 0 1px rgb(0 0 0 / 0.02), 0 4px 12px rgb(0 0 0 / 0.06), 0 12px 28px rgb(0 0 0 / 0.07);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ==========================================================================
+   Base layer
+   ========================================================================== */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    -webkit-text-size-adjust: 100%;
   }
+
+  body {
+    @apply bg-canvas font-sans text-body antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-ink;
+    text-wrap: balance;
+  }
+
+  p { text-wrap: pretty; }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible,
+  [tabindex]:focus-visible {
+    @apply outline-none ring-2 ring-ink ring-offset-2 ring-offset-canvas rounded-sm;
+  }
+
+  ::selection { @apply bg-ink text-white; }
+
+  img { @apply max-w-full; }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ==========================================================================
+   Components / utilities
+   ========================================================================== */
+@layer components {
+  /* Typography ----------------------------------------------------------- */
+  .heading-1 {
+    @apply font-bold tracking-tight text-ink;
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    line-height: 1.05;
+  }
+  .heading-2 {
+    @apply font-bold tracking-tight text-ink;
+    font-size: clamp(1.875rem, 3.4vw, 2.5rem);
+    line-height: 1.1;
+  }
+  .heading-3 {
+    @apply text-lg font-semibold leading-snug text-ink md:text-xl;
+  }
+  .lead {
+    @apply text-[17px] leading-relaxed text-body md:text-lg;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-accent-strong;
+  }
+
+  /* Buttons -------------------------------------------------------------- */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full font-medium
+           transition-all duration-200 active:scale-[0.98]
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
+           disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-md { @apply h-11 px-5 text-sm; }
+  .btn-lg { @apply h-12 px-6 text-[15px]; }
+  .btn-primary {
+    @apply bg-ink text-white hover:bg-ink-soft focus-visible:ring-ink focus-visible:ring-offset-canvas;
+  }
+  .btn-secondary {
+    @apply border border-line bg-canvas text-ink hover:border-border-strong hover:bg-surface
+           focus-visible:ring-ink focus-visible:ring-offset-canvas;
+  }
+  .btn-whatsapp {
+    @apply bg-[var(--color-brand-whatsapp)] text-white hover:bg-[var(--color-brand-whatsapp-dark)]
+           focus-visible:ring-[var(--color-brand-whatsapp)] focus-visible:ring-offset-canvas;
+  }
+
+  /* Cards: premium glassmorphic feel ----------- */
+  .card {
+    @apply rounded-[1.5rem] border border-white/60 bg-white/60 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.04)];
+  }
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:border-white/80 hover:bg-white/90 hover:shadow-[0_16px_40px_rgba(0,0,0,0.08)];
+  }
+
+  /* Chips / badges ------------------------------------------------------- */
+  .chip {
+    @apply inline-flex items-center rounded-full bg-surface-2 px-3 py-1 text-xs font-semibold text-body;
+  }
+
+  /* Form fields ---------------------------------------------------------- */
+  .field {
+    @apply h-12 w-full rounded-xl border border-line bg-canvas px-4 text-sm text-ink
+           placeholder:text-muted transition-colors
+           focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink;
+  }
+  .field-area {
+    @apply min-h-28 w-full rounded-xl border border-line bg-canvas px-4 py-3 text-sm text-ink
+           placeholder:text-muted transition-colors
+           focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink;
+  }
+  .field-label {
+    @apply mb-1.5 block text-sm font-medium text-ink;
+  }
 }

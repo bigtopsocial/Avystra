@@ -1,21 +1,25 @@
-import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import About from '@/components/About';
-import Courses from '@/components/Courses';
+import Programs from '@/components/Programs';
 import Benefits from '@/components/Benefits';
+import Methodology from '@/components/Methodology';
+import Industries from '@/components/Industries';
+import Testimonials from '@/components/Testimonials';
+import About from '@/components/About';
 import FAQ from '@/components/FAQ';
-import Footer from '@/components/Footer';
+import Contact from '@/components/Contact';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white font-sans text-gray-900">
-      <Navbar />
+    <>
       <Hero />
-      <About />
-      <Courses />
+      <Programs />
       <Benefits />
+      <Methodology />
+      <Industries />
+      <Testimonials />
+      <About />
       <FAQ />
-      <Footer />
-    </main>
+      <Contact />
+    </>
   );
 }

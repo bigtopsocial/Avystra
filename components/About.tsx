@@ -2,93 +2,109 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Section from '@/components/ui/Section';
+
+const points = [
+    {
+        title: 'Built around your business',
+        detail: 'Every program starts with a training needs analysis — never an off-the-shelf template.',
+    },
+    {
+        title: 'Practitioner-led training',
+        detail: 'Sessions delivered by trainers with real corporate and industry experience.',
+    },
+    {
+        title: 'Flexible delivery',
+        detail: 'Instructor-led, virtual, hybrid, on-site, or self-paced — whatever fits your teams.',
+    },
+    {
+        title: 'Measurable, lasting impact',
+        detail: 'Outcomes tracked against agreed KPIs, with post-training support to sustain them.',
+    },
+];
+
+const reveal = {
+    initial: { opacity: 0, y: 20 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, margin: '-100px' },
+};
 
 export default function About() {
     return (
-        <section id="about" className="w-full bg-[#f6f7f9] py-24 md:py-32 overflow-hidden">
-            <div className="max-w-[1280px] mx-auto px-6 md:px-12">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <Section id="about" className="relative isolate overflow-hidden bg-canvas">
+            {/* faint ambient glow */}
+            <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -left-32 top-1/4 -z-10 h-[520px] w-[520px] rounded-full blur-3xl"
+                style={{ background: 'radial-gradient(circle, rgba(180,134,47,0.08), transparent 70%)' }}
+            />
 
-                    {/* Left Content */}
-                    <div className="flex flex-col">
-                        <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-100px" }}
-                            transition={{ duration: 0.7, ease: "easeOut" }}
-                            className="text-[36px] md:text-[44px] font-bold text-[#0F172A] leading-tight mb-6"
-                        >
-                            Meet Your <span className="text-slate-800 block">Mentor <br /> Nishant Mendhe</span>
-                        </motion.h2>
+            <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
+                {/* Left content */}
+                <div className="flex flex-col">
+                    <motion.p {...reveal} transition={{ duration: 0.6, ease: 'easeOut' }} className="eyebrow mb-4">
+                        <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                        About Avystra
+                    </motion.p>
 
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-100px" }}
-                            transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
-                            className="space-y-6 text-[15px] md:text-[17px] text-[#8e95a5] leading-relaxed font-normal text-justify"
-                        >
-                            <p>
-                                Nishant Mendhe Stock Market Training Institute, located in Nagpur, India, specializes in comprehensive stock market training designed for traders at every skill level. Offering engaging share market classes, our institute equips participants with vital trading strategies and insights necessary for success in the financial markets.
-                            </p>
-                            <p>
-                                Our expert-led courses include specialized swing trading classes and broader stock market training, emphasizing practical knowledge and real-time trading experience. Join us for top-notch trading classes in Nagpur, and elevate your trading skills today. With a focus on hands-on learning, we prepare you to navigate the stock market with confidence and acumen. Advance your trading career with us!
-                            </p>
-                        </motion.div>
-
-                        {/* Divider */}
-                        <motion.hr
-                            initial={{ opacity: 0, scaleX: 0 }}
-                            whileInView={{ opacity: 1, scaleX: 1 }}
-                            viewport={{ once: true, margin: "-100px" }}
-                            transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
-                            className="my-3 border-t border-gray-200 origin-left"
-                        />
-
-                        {/* Stats */}
-                        <div className="grid grid-cols-2 gap-6 text-left">
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, margin: "-100px" }}
-                                transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
-                            >
-                                <div className="text-[36px] md:text-[42px] font-bold text-[#0F172A] mb-1 leading-none tracking-tight">10</div>
-                                <div className="text-[11px] font-semibold text-[#8e95a5] tracking-widest uppercase mb-1">Years</div>
-                                <div className="text-[13px] font-medium text-gray-400">Stock Market Experience</div>
-                            </motion.div>
-
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, margin: "-100px" }}
-                                transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
-                            >
-                                <div className="text-[36px] md:text-[42px] font-bold text-[#0F172A] mb-1 leading-none tracking-tight">70K+</div>
-                                <div className="text-[11px] font-semibold text-[#8e95a5] tracking-widest uppercase mb-1">Students</div>
-                                <div className="text-[13px] font-medium text-gray-400">Satisfied Customers</div>
-                            </motion.div>
-                        </div>
-                    </div>
-
-                    {/* Right Image */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.9, ease: "easeOut" }}
-                        className="relative w-full aspect-[4/5] rounded-[24px] overflow-hidden drop-shadow-2xl"
+                    <motion.h2
+                        {...reveal}
+                        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.05 }}
+                        className="heading-2"
                     >
-                        <Image
-                            src="/images/about1.png"
-                            alt="Stock Market Training Institute in Nagpur"
-                            fill
-                            className="object-cover object-bottom"
-                        />
-                    </motion.div>
+                        A trusted partner in corporate learning <span className="bg-gradient-to-r from-accent-strong to-accent bg-clip-text text-transparent">&amp; workforce development</span>
+                    </motion.h2>
 
+                    <motion.p
+                        {...reveal}
+                        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
+                        className="lead mt-6"
+                    >
+                        Avystra designs and delivers customized corporate training for startups, SMEs, enterprises,
+                        multinationals, government bodies, and institutions — working closely with HR and L&amp;D teams
+                        to understand real business challenges before designing a single slide.
+                    </motion.p>
+
+                    {/* Value points */}
+                    <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-6 border-t border-line pt-10 sm:grid-cols-2">
+                        {points.map((point, index) => (
+                            <motion.div
+                                key={point.title}
+                                {...reveal}
+                                transition={{ duration: 0.6, ease: 'easeOut', delay: 0.15 + index * 0.08 }}
+                                className="flex gap-3"
+                            >
+                                <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-accent-soft text-accent-strong">
+                                    <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                                    </svg>
+                                </span>
+                                <div>
+                                    <h3 className="text-[15px] font-semibold text-ink">{point.title}</h3>
+                                    <p className="mt-1 text-sm leading-relaxed text-muted">{point.detail}</p>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
                 </div>
+
+                {/* Right image */}
+                <motion.div
+                    initial={{ opacity: 0, x: 24 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: '-100px' }}
+                    transition={{ duration: 0.9, ease: 'easeOut' }}
+                    className="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] border border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.08)]"
+                >
+                    <Image
+                        src="/images/client.png"
+                        alt="Corporate training workshop session"
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        className="object-cover object-bottom"
+                    />
+                </motion.div>
             </div>
-        </section>
+        </Section>
     );
 }

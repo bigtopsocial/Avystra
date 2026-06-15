@@ -4,32 +4,33 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Container from '@/components/ui/Container';
 
 const journeySteps = [
     {
-        year: "2012",
+        year: "2013",
         title: "The Beginning",
-        description: "Nisshant Menddhe started his trading journey, navigating the complexities of the stock market. Through trial, error, and relentless study of market psychology, the foundational strategies were born.",
+        description: "Avystra started as a small training consultancy delivering communication and soft skills workshops to local businesses, with a focus on practical, applicable learning over theory.",
     },
     {
         year: "2016",
-        title: "Developing the Blueprint",
-        description: "After years of consistent profitability, Nisshant codified his methods into actionable frameworks. The focus shifted from merely trading to understanding the deep institutional footprint in the markets.",
+        title: "Expanding Into Leadership Development",
+        description: "Demand from growing SMEs led us to design our first structured Leadership & Management Development programs, helping first-time managers build confidence and capability.",
     },
     {
         year: "2019",
-        title: "The First Cohort",
-        description: "What started as mentoring a few close friends turned into the first official training cohort. The results were astounding—ordinary individuals began reading the tape like seasoned professionals.",
+        title: "Enterprise & Multi-Location Clients",
+        description: "We began partnering with larger enterprises and multi-location organizations, developing hybrid and virtual delivery models to train distributed teams consistently.",
     },
     {
-        year: "2021",
-        title: "Institute Foundation",
-        description: "The Nisshant Menddhe Stock Market Trainings Institute was officially founded. The mission was clear: democratize high-level financial education and cut through the noise of 'get-rich-quick' schemes.",
+        year: "2022",
+        title: "Technology & AI Training Practice",
+        description: "Recognizing the pace of digital transformation, we launched dedicated programs in AI, data analytics, cloud computing, cybersecurity, and DevOps for technology and operations teams.",
     },
     {
-        year: "2024",
-        title: "Global Reach",
-        description: "Today, we have empowered over 10,000+ students worldwide. Our community represents a new wave of disciplined, risk-averse, and highly profitable independent traders.",
+        year: "2026",
+        title: "A Trusted Learning Partner",
+        description: "Today, Avystra has trained professionals across 250+ organizations spanning IT, BFSI, manufacturing, healthcare, retail, government, and education — with a continued focus on measurable, lasting impact.",
     }
 ];
 
@@ -46,17 +47,23 @@ export default function AboutUs() {
     const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
     return (
-        <main className="min-h-screen bg-white font-sans text-gray-900">
-            <Navbar />
-
+        <>
             {/* Hero */}
-            <section className="relative w-full bg-[#f6f7f9] py-24 md:py-32">
-                <div className="max-w-[1080px] mx-auto px-6 md:px-12 text-center">
+            <section className="bg-surface py-20 md:py-28">
+                <Container className="text-center">
+                    <motion.p
+                        initial={{ opacity: 0, y: 16 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.7 }}
+                        className="eyebrow mb-4"
+                    >
+                        Our Story
+                    </motion.p>
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        className="text-[40px] md:text-[56px] font-bold text-[#0F172A] leading-tight mb-6"
+                        transition={{ duration: 0.8, delay: 0.05 }}
+                        className="heading-1 mx-auto max-w-3xl"
                     >
                         Our Journey
                     </motion.h1>
@@ -64,22 +71,22 @@ export default function AboutUs() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.1 }}
-                        className="text-lg md:text-xl text-[#8e95a5] leading-relaxed max-w-2xl mx-auto"
+                        className="lead mx-auto mt-5 max-w-2xl"
                     >
-                        From a solitary trader navigating the markets to establishing an institute that empowers thousands globally. This is how we built wealth with confidence.
+                        From a small training consultancy to a trusted corporate learning partner for organizations across industries. This is how we built Avystra.
                     </motion.p>
-                </div>
+                </Container>
             </section>
 
             {/* Timeline Section */}
-            <section className="py-24 md:py-32 bg-white relative">
-                <div className="max-w-[800px] mx-auto px-6 md:px-12 relative" ref={containerRef}>
+            <section className="relative bg-white py-20 md:py-28">
+                <div className="relative mx-auto max-w-3xl px-6 lg:px-8" ref={containerRef}>
 
                     {/* Animated SVG Line */}
-                    <div className="absolute left-6 md:left-1/2 md:-ml-[1px] top-0 bottom-0 w-[2px] bg-gray-100">
+                    <div className="absolute left-6 md:left-1/2 md:-ml-[1px] top-0 bottom-0 w-[2px] bg-line-soft">
                         <motion.div
                             style={{ height: lineHeight }}
-                            className="w-full bg-[#0F172A] origin-top"
+                            className="w-full bg-ink origin-top"
                         />
                     </div>
 
@@ -98,10 +105,10 @@ export default function AboutUs() {
                                             whileInView="visible"
                                             viewport={{ once: true, margin: "-100px" }}
                                         >
-                                            <circle cx="24" cy="24" r="23" className="stroke-gray-200" strokeWidth="2" fill="white" />
+                                            <circle cx="24" cy="24" r="23" className="stroke-line" strokeWidth="2" fill="white" />
                                             <motion.circle
                                                 cx="24" cy="24" r="23"
-                                                className="stroke-[#0F172A]"
+                                                className="stroke-ink"
                                                 strokeWidth="2"
                                                 fill="transparent"
                                                 variants={{
@@ -111,7 +118,7 @@ export default function AboutUs() {
                                             />
                                             <motion.circle
                                                 cx="24" cy="24" r="8"
-                                                className="fill-[#0F172A]"
+                                                className="fill-ink"
                                                 variants={{
                                                     hidden: { scale: 0 },
                                                     visible: { scale: 1, transition: { duration: 0.5, delay: 0.5, ease: "backOut" } }
@@ -127,7 +134,7 @@ export default function AboutUs() {
                                             whileInView={{ scale: 1 }}
                                             viewport={{ once: true, margin: "-50px" }}
                                             transition={{ duration: 0.4, ease: "backOut" }}
-                                            className="w-3 h-3 rounded-full bg-[#0F172A] border-4 border-white box-content shadow-[0_0_0_2px_#f1f5f9]"
+                                            className="w-3 h-3 rounded-full bg-ink border-4 border-white box-content shadow-[0_0_0_2px_#f1f5f9]"
                                         />
                                     </div>
 
@@ -140,13 +147,13 @@ export default function AboutUs() {
                                             transition={{ duration: 0.7, ease: "easeOut" }}
                                             className="bg-white"
                                         >
-                                            <span className="text-[#0F172A] font-bold text-[28px] md:text-[36px] tracking-tighter mb-2 block">
+                                            <span className="mb-2 block text-3xl font-bold tracking-tight text-ink md:text-4xl">
                                                 {step.year}
                                             </span>
-                                            <h3 className="text-xl font-bold text-gray-900 mb-4">
+                                            <h3 className="mb-3 text-xl font-bold text-ink">
                                                 {step.title}
                                             </h3>
-                                            <p className="text-[#8e95a5] leading-relaxed text-[15px]">
+                                            <p className="text-[15px] leading-relaxed text-muted">
                                                 {step.description}
                                             </p>
                                         </motion.div>
@@ -159,8 +166,6 @@ export default function AboutUs() {
 
                 </div>
             </section>
-
-            <Footer />
-        </main>
+        </>
     );
 }
