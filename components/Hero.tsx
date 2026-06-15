@@ -57,7 +57,7 @@ function AvatarStack() {
 
 export default function Hero() {
     return (
-        <section className="relative isolate flex min-h-[calc(100dvh-5rem)] flex-col justify-center overflow-hidden bg-canvas lg:min-h-[calc(100dvh-6rem)]">
+        <section className="relative isolate flex flex-col justify-center overflow-hidden bg-canvas lg:min-h-[calc(100dvh-6rem)]">
             {/* faint ambient glow */}
             <div
                 aria-hidden="true"
@@ -66,9 +66,9 @@ export default function Hero() {
             />
 
             <Container className="relative z-10">
-                <div className="grid items-center gap-12 py-14 md:py-16 lg:grid-cols-2 lg:gap-10 lg:py-20">
+                <div className="grid items-center gap-10 py-10 sm:py-14 md:py-16 lg:grid-cols-2 lg:gap-10 lg:py-20">
                     {/* ----------------------------- LEFT ----------------------------- */}
-                    <div className="flex flex-col">
+                    <div className="flex flex-col lg:col-start-1 lg:row-start-1">
                         <motion.span
                             {...fade}
                             transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -84,8 +84,8 @@ export default function Hero() {
                         <motion.h1
                             {...fade}
                             transition={{ duration: 0.7, ease: 'easeOut', delay: 0.06 }}
-                            className="mt-6 font-bold tracking-tight text-ink"
-                            style={{ fontSize: 'clamp(2.5rem, 4.6vw, 4rem)', lineHeight: 1.05 }}
+                            className="mt-5 font-bold tracking-tight text-ink sm:mt-6"
+                            style={{ fontSize: 'clamp(2rem, 7vw, 4rem)', lineHeight: 1.08 }}
                         >
                             Training that drives <span className="block bg-gradient-to-r from-accent-strong to-accent bg-clip-text text-transparent">real business results</span>
                         </motion.h1>
@@ -103,12 +103,12 @@ export default function Hero() {
                         <motion.div
                             {...fade}
                             transition={{ duration: 0.7, ease: 'easeOut', delay: 0.18 }}
-                            className="mt-8 flex flex-col gap-4 sm:flex-row"
+                            className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4"
                         >
-                            <Button href="#contact" size="lg" className="shadow-lg shadow-ink/5">
+                            <Button href="#contact" size="lg" className="w-full shadow-lg shadow-ink/5 sm:w-auto">
                                 Request a Proposal <ArrowRight />
                             </Button>
-                            <Button href="#programs" variant="secondary" size="lg" className="bg-white/50 backdrop-blur-sm hover:bg-white">
+                            <Button href="#programs" variant="secondary" size="lg" className="w-full bg-white/50 backdrop-blur-sm hover:bg-white sm:w-auto">
                                 Explore Programs <ArrowRight />
                             </Button>
                         </motion.div>
@@ -123,27 +123,6 @@ export default function Hero() {
                                 Trusted by HR &amp; L&amp;D teams across IT, BFSI, Manufacturing &amp; Healthcare.
                             </p>
                         </motion.div>
-
-                        {/* Stats card */}
-                        <motion.dl
-                            {...fade}
-                            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
-                            className="mt-12 grid grid-cols-1 gap-y-8 divide-y divide-line/50 sm:grid-cols-3 sm:gap-y-0 sm:divide-x sm:divide-y-0"
-                        >
-                            {stats.map((stat) => (
-                                <div key={stat.label} className="flex flex-col gap-2.5 sm:px-6 first:sm:pl-0">
-                                    <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent-soft text-accent-strong">
-                                        <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" aria-hidden="true">
-                                            {stat.icon}
-                                        </svg>
-                                    </span>
-                                    <div>
-                                        <dd className="text-3xl font-bold tracking-tight text-ink">{stat.value}</dd>
-                                        <dt className="mt-1 text-sm font-medium text-muted">{stat.label}</dt>
-                                    </div>
-                                </div>
-                            ))}
-                        </motion.dl>
                     </div>
 
                     {/* ----------------------------- RIGHT ----------------------------- */}
@@ -152,7 +131,7 @@ export default function Hero() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.9, ease: 'easeOut', delay: 0.15 }}
-                        className="relative mx-auto w-full max-w-[520px] lg:max-w-none"
+                        className="relative mx-auto w-full max-w-[520px] lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:max-w-none"
                     >
                         {/* elegant arch background */}
                         <div className="absolute inset-x-8 bottom-0 top-12 -z-10 rounded-t-full border border-white/60 bg-gradient-to-b from-accent-soft/80 to-surface/30 shadow-[0_8px_32px_rgba(0,0,0,0.04)] [mask-image:linear-gradient(to_bottom,black_80%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_80%,transparent_100%)]" />
@@ -238,6 +217,27 @@ export default function Hero() {
                             </svg>
                         </motion.div>
                     </motion.div>
+
+                    {/* Stats card — sits under the copy on desktop, after the portrait on mobile */}
+                    <motion.dl
+                        {...fade}
+                        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
+                        className="grid grid-cols-3 divide-x divide-line/50 lg:col-start-1 lg:row-start-2"
+                    >
+                        {stats.map((stat) => (
+                            <div key={stat.label} className="flex flex-col gap-2 px-3 first:pl-0 sm:gap-2.5 sm:px-6">
+                                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-soft text-accent-strong sm:h-10 sm:w-10 sm:rounded-xl">
+                                    <svg className="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                                        {stat.icon}
+                                    </svg>
+                                </span>
+                                <div>
+                                    <dd className="text-xl font-bold tracking-tight text-ink sm:text-3xl">{stat.value}</dd>
+                                    <dt className="mt-1 text-xs font-medium text-muted sm:text-sm">{stat.label}</dt>
+                                </div>
+                            </div>
+                        ))}
+                    </motion.dl>
                 </div>
             </Container>
         </section>

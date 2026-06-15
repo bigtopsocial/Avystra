@@ -88,21 +88,45 @@ export default function About() {
                     </div>
                 </div>
 
-                {/* Right image */}
+                {/* Right image — transparent cutout on a clean soft panel */}
                 <motion.div
                     initial={{ opacity: 0, x: 24 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: '-100px' }}
                     transition={{ duration: 0.9, ease: 'easeOut' }}
-                    className="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] border border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.08)]"
+                    className="relative mx-auto w-full max-w-[340px] sm:max-w-[400px] lg:max-w-[460px]"
                 >
-                    <Image
-                        src="/images/client.png"
-                        alt="Corporate training workshop session"
-                        fill
-                        sizes="(max-width: 1024px) 100vw, 50vw"
-                        className="object-cover object-bottom"
+                    {/* soft rounded panel */}
+                    <div
+                        aria-hidden="true"
+                        className="absolute inset-0 -z-10 rounded-[2rem] border border-line bg-gradient-to-b from-accent-soft/70 via-surface to-surface"
                     />
+                    {/* subtle dotted accent */}
+                    <div
+                        aria-hidden="true"
+                        className="absolute bottom-6 right-5 hidden h-20 w-20 opacity-60 sm:block"
+                        style={{
+                            backgroundImage: 'radial-gradient(rgba(180,134,47,0.4) 1.4px, transparent 1.4px)',
+                            backgroundSize: '14px 14px',
+                        }}
+                    />
+
+                    {/* portrait */}
+                    <div className="relative aspect-[3/4] w-full">
+                        <Image
+                            src="/images/client.png"
+                            alt="Avystra corporate training expert"
+                            fill
+                            sizes="(max-width: 640px) 80vw, (max-width: 1024px) 400px, 460px"
+                            className="object-contain object-bottom drop-shadow-[0_18px_36px_rgba(0,0,0,0.14)]"
+                        />
+                    </div>
+
+                    {/* floating credential badge */}
+                    <div className="absolute bottom-5 left-0 hidden rounded-2xl border border-line bg-white/90 px-4 py-3 shadow-[0_8px_30px_rgb(0,0,0,0.08)] backdrop-blur-md sm:block">
+                        <div className="text-lg font-bold leading-none text-ink">12+ yrs</div>
+                        <div className="mt-1 text-xs text-muted">Avg. trainer experience</div>
+                    </div>
                 </motion.div>
             </div>
         </Section>
